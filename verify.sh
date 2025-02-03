@@ -17,6 +17,7 @@ verify () {
 
     if [[ "$diff" == "" ]]; then
         echo "\033[0;32mPassed \033[0m$base_file_name"
+        touch $d/SOLVED
     else
         echo "\033[0;31mFAILED\033[0m $base_file_name"
     fi
