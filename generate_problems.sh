@@ -9,4 +9,8 @@ do
     contents="${template_contents:0:108} $name${template_contents:117:169}$lowercase${template_contents:294}"
     mkdir "$name"
     echo "$contents" > $name/$name.java
+    
+    if test -d "./StudentData"; then
+        cp ./StudentData/$lowercase.dat $name/$lowercase.dat
+    fi
 done
