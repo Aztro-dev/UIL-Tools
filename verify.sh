@@ -11,7 +11,7 @@ verify () {
     java ../"$d"/"$base_file_name".java > ../temp.out
     cd ../
 
-    output_file="$base_file_name".out
+    output_file=$(echo "$base_file_name".out | tr '[:upper:]' '[:lower:]')
 
     diff=$(diff --strip-trailing-cr temp.out JudgeOutputFiles/"$output_file" -q)
 
